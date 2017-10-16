@@ -1,1 +1,34 @@
-<h1> welcome to this smart app!</h1>
+<div class="row">
+	<div class="col-md-4">
+				<%= simple_form_for Weather.new do |f| %>
+		  <%= f.input :travel_date %>
+		  <%= f.input :destination %>
+		  <%= f.input :carrier %>
+		  <%= f.input :departure_time %>
+		  <%= f.input :arrival_time %>
+		 
+		  <%= f.submit 'Predict' %>
+		<% end %>
+	</div>
+
+	<div class="col-md-8">
+
+		<% @weathers.each do |weather| %>
+		<div class="panel panel-default">
+	  	<div class="panel-body">
+		 Travel Date : <%=weather.travel_date %><br>
+		  Origin: <%= weather.origin %><br>
+		  Destination : <%= weather.destination %> <br>
+		  carrier : <%= weather.carrier %><br>
+		 Departure time : <%= weather.departure_time %><br>
+		  Arrival Time : <%= weather.arrival_time %>
+	 </div>
+	</div>
+
+<% end %>
+	</div>
+</div>
+
+
+
+
